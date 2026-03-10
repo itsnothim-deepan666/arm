@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: a4ce88466a703825a561c2b2 / workspace_id: ce48144295f38f35d04a1e22 -->
+<robot name="C:\Users\Deepankuran M\Builds\arm">
+  <!-- Link right -->
+  <link name="right">
+    <inertial>
+      <origin xyz="0.0929772 0.469583 0.979814" rpy="0 0 0"/>
+      <mass value="0.275495"/>
+      <inertia ixx="0.00027998" ixy="0.000157861" ixz="7.58372e-05" iyy="0.000182947" iyz="-0.000103561" izz="0.000349278"/>
+    </inertial>
+    <!-- Part right -->
+    <visual>
+      <origin xyz="0.359201 0.59513 1.21743" rpy="-2.55153 0.352072 -0.859803"/>
+      <geometry>
+        <mesh filename="package://assets\right.stl"/>
+      </geometry>
+      <material name="right_material">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.359201 0.59513 1.21743" rpy="-2.55153 0.352072 -0.859803"/>
+      <geometry>
+        <mesh filename="package://assets\right.stl"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
