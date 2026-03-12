@@ -2,28 +2,145 @@
 <!-- Generated using onshape-to-robot -->
 <!-- Onshape document_id: a4ce88466a703825a561c2b2 / workspace_id: ce48144295f38f35d04a1e22 -->
 <robot name="C:\Users\Deepankuran M\Builds\arm">
-  <!-- Link right -->
-  <link name="right">
-    <inertial>
-      <origin xyz="0.0929772 0.469583 0.979814" rpy="0 0 0"/>
-      <mass value="0.275495"/>
-      <inertia ixx="0.00027998" ixy="0.000157861" ixz="7.58372e-05" iyy="0.000182947" iyz="-0.000103561" izz="0.000349278"/>
-    </inertial>
-    <!-- Part right -->
+  <mujoco>
+    <compiler meshdir="assets"/>
+  </mujoco>
+  <!-- Base link -->
+  <link name="base_link">
     <visual>
-      <origin xyz="0.359201 0.59513 1.21743" rpy="-2.55153 0.352072 -0.859803"/>
-      <geometry>
-        <mesh filename="package://assets\right.stl"/>
-      </geometry>
-      <material name="right_material">
-        <color rgba="0 0 0 1"/>
-      </material>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="base_link.stl"/></geometry>
+      <material name="base_material"><color rgba="0.8 0.8 0.8 1"/></material>
     </visual>
     <collision>
-      <origin xyz="0.359201 0.59513 1.21743" rpy="-2.55153 0.352072 -0.859803"/>
-      <geometry>
-        <mesh filename="package://assets\right.stl"/>
-      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="base_link.stl"/></geometry>
     </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
   </link>
+
+  <!-- Link left -->
+  <link name="left">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="left.stl"/></geometry>
+      <material name="left_material"><color rgba="0.8 0.8 0.8 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="left.stl"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <!-- Link right -->
+  <link name="right">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="right.stl"/></geometry>
+      <material name="right_material"><color rgba="0.8 0.8 0.8 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="right.stl"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <!-- Jaw links -->
+  <link name="jaw1">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw1.stl"/></geometry><material name="jaw1_mat"><color rgba="0.8 0.8 0.8 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw1.stl"/></geometry></collision>
+    <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
+  </link>
+  <link name="jaw2">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw2.stl"/></geometry><material name="jaw2_mat"><color rgba="0.8 0.8 0.8 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw2.stl"/></geometry></collision>
+    <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
+  </link>
+  <link name="jaw3">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw3.stl"/></geometry><material name="jaw3_mat"><color rgba="0.8 0.8 0.8 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw3.stl"/></geometry></collision>
+    <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
+  </link>
+  <link name="jaw4">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw4.stl"/></geometry><material name="jaw4_mat"><color rgba="0.8 0.8 0.8 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw4.stl"/></geometry></collision>
+    <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
+  </link>
+  <link name="jaw5">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw5.stl"/></geometry><material name="jaw5_mat"><color rgba="0.8 0.8 0.8 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw5.stl"/></geometry></collision>
+    <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
+  </link>
+  <link name="jaw6">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw6.stl"/></geometry><material name="jaw6_mat"><color rgba="0.8 0.8 0.8 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="jaw6.stl"/></geometry></collision>
+    <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
+  </link>
+
+  <!-- Joints connecting links -->
+  <joint name="base_to_left" type="fixed">
+    <parent link="base_link"/>
+    <child link="left"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="base_to_right" type="fixed">
+    <parent link="base_link"/>
+    <child link="right"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="base_to_jaw1" type="fixed">
+    <parent link="base_link"/>
+    <child link="jaw1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="jaw1_to_jaw2" type="revolute">
+    <parent link="jaw1"/>
+    <child link="jaw2"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+    <dynamics damping="1.0" friction="0.1"/>
+  </joint>
+  <joint name="jaw2_to_jaw3" type="fixed">
+    <parent link="jaw2"/>
+    <child link="jaw3"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="jaw3_to_jaw4" type="fixed">
+    <parent link="jaw3"/>
+    <child link="jaw4"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="jaw4_to_jaw5" type="fixed">
+    <parent link="jaw4"/>
+    <child link="jaw5"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="jaw5_to_jaw6" type="fixed">
+    <parent link="jaw5"/>
+    <child link="jaw6"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Actuator for testing -->
+  <transmission name="jaw1_jaw2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="jaw1_to_jaw2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="jaw1_jaw2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 </robot>

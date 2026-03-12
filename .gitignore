@@ -1,0 +1,13 @@
+MUJOCO_LOG.TXT
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+envs/
+.env
+
+# VS Code
+.vscode/
